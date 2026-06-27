@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Devansh DOB Online Book Blog — Expert sports betting guides, fantasy cricket strategies, casino tips and winning insights." />
+  <title>Blog &amp; Strategies | Devansh DOB Online Book</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    [data-aos] img { opacity: 1 !important; }
+    .blog-hero {
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 3rem;
+      background: radial-gradient(ellipse at 60% 40%, rgba(255,193,7,0.07), transparent 60%),
+                  radial-gradient(ellipse at 15% 80%, rgba(139,92,246,0.06), transparent 55%);
+    }
+    .cat-bar { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .cat-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,193,7,0.2);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer; background: transparent;
+      transition: all 0.22s ease;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: rgba(255,193,7,0.12);
+      border-color: rgba(255,193,7,0.5);
+      color: #FFC107;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.75rem;
+    }
+    .blog-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,193,7,0.28);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 30px rgba(255,193,7,0.07);
+    }
+    .bc-img { position: relative; overflow: hidden; height: 200px; flex-shrink: 0; }
+    .bc-img img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease; display:block; }
+    .blog-card:hover .bc-img img { transform: scale(1.06); }
+    .bc-tag {
+      position: absolute; top: 0.85rem; left: 0.85rem;
+      padding: 0.28rem 0.75rem;
+      background: rgba(255,193,7,0.92); color: #000;
+      border-radius: 999px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .bc-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .bc-meta {
+      display: flex; gap: 0.85rem;
+      font-size: 0.7rem; color: rgba(255,255,255,0.38);
+      font-family: 'Rajdhani', sans-serif; margin-bottom: 0.65rem;
+    }
+    .bc-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.92rem; font-weight: 700; line-height: 1.45;
+      color: #fff; margin-bottom: 0.65rem;
+      transition: color 0.22s ease;
+    }
+    .blog-card:hover .bc-title { color: #FFC107; }
+    .bc-excerpt {
+      font-size: 0.8rem; line-height: 1.7;
+      color: rgba(255,255,255,0.45); margin-bottom: auto; padding-bottom: 1.2rem;
+    }
+    .bc-foot {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1rem; margin-top: auto;
+    }
+    .bc-author { font-size: 0.7rem; color: rgba(255,255,255,0.32); font-family: 'Rajdhani', sans-serif; }
+    .bc-read {
+      font-size: 0.75rem; font-weight: 700;
+      font-family: 'Rajdhani', sans-serif;
+      color: #FFC107; letter-spacing: 0.05em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .bc-read:hover { text-decoration: underline; }
+    /* Featured */
+    .featured-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-radius: 22px; overflow: hidden;
+      border: 1px solid rgba(255,193,7,0.15);
+      background: rgba(255,193,7,0.03);
+      margin-bottom: 3rem;
+    }
+    @media(max-width:768px){ .featured-wrap{ grid-template-columns:1fr; } }
+    .feat-img { min-height: 300px; overflow: hidden; }
+    .feat-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .feat-body { padding: 2.5rem; display:flex; flex-direction:column; justify-content:center; }
+    .feat-label { font-family:'Rajdhani',sans-serif; font-size:0.7rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:#FFC107; margin-bottom:1rem; }
+    .feat-title { font-family:'Orbitron',sans-serif; font-size:1.35rem; font-weight:800; line-height:1.3; color:#fff; margin-bottom:1rem; }
+    .feat-excerpt { font-size:0.88rem; line-height:1.75; color:rgba(255,255,255,0.52); margin-bottom:1.5rem; }
+    .feat-meta { font-size:0.72rem; color:rgba(255,255,255,0.35); font-family:'Rajdhani',sans-serif; display:flex; gap:1rem; margin-bottom:1.5rem; }
+    /* Hidden card */
+    .blog-card.hidden-card { display: none; }
+  </style>
+</head>
+<body class="bg-[#080808] text-white overflow-x-hidden">
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<div id="mouse-glow" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Devansh DOB Online Book">
+    <div class="nav-logo-icon-wrap" aria-hidden="true">
+      <img src="assets/images/logo.png" alt="Devansh DOB Online Book" class="nav-logo-img" />
+      <div class="nav-logo-ring"></div>
+    </div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">DEVANSH<span class="g">DOB</span></span>
+      <span class="nav-brand-sub">ONLINE BOOK</span>
+    </div>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#sports">Sports</a></li>
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="blog.html" style="color:#FFC107;">Blog</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button id="hamburger" class="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+  <ul class="nav-links" role="list">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#sports">Sports</a></li>
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="badge-pill mb-4" style="width:fit-content;"><span class="dot"></span> Expert Insights</div>
+    <h1 class="section-title mb-4">Blog &amp; <span class="gold-shimmer">Strategies</span></h1>
+    <p class="section-sub max-w-2xl">Master sports gaming from the experts. Fantasy cricket picks, betting guides, casino strategies, and winning insights — updated weekly.</p>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section style="padding-top:0; padding-bottom:2rem;">
+  <div class="container">
+    <div class="featured-wrap">
+      <div class="feat-img">
+        <img src="https://images.unsplash.com/photo-1540747913346-19212a4a3e5c?w=800&auto=format&fit=crop&q=80" alt="IPL Fantasy Strategy" />
+      </div>
+      <div class="feat-body">
+        <div class="feat-label"><i class="fas fa-star"></i> &nbsp;Featured Article</div>
+        <h2 class="feat-title">Top 10 Fantasy Cricket Strategies to Dominate IPL 2025</h2>
+        <div class="feat-meta">
+          <span><i class="fas fa-calendar-alt"></i> June 22, 2025</span>
+          <span><i class="fas fa-clock"></i> 6 min read</span>
+          <span><i class="fas fa-tag"></i> Cricket</span>
+        </div>
+        <p class="feat-excerpt">From captain-vice captain picks to differential player selection — master the exact tactics top-ranked fantasy players use to consistently crack mega contests every week of the IPL season.</p>
+        <a href="blog-post.html" class="btn-primary" style="width:fit-content;display:inline-flex;">
+          <i class="fas fa-book-open"></i> Read Full Article
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL ARTICLES -->
+<section class="section-py" style="padding-top:1rem;">
+  <div class="container">
+
+    <!-- Category Filter -->
+    <div class="cat-bar">
+      <button class="cat-btn active" data-cat="all">All Articles</button>
+      <button class="cat-btn" data-cat="cricket">Cricket</button>
+      <button class="cat-btn" data-cat="football">Football</button>
+      <button class="cat-btn" data-cat="casino">Casino</button>
+      <button class="cat-btn" data-cat="kabaddi">Kabaddi</button>
+      <button class="cat-btn" data-cat="strategy">Strategy</button>
+      <button class="cat-btn" data-cat="betting">Betting Guide</button>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+
+      <article class="blog-card" data-category="cricket">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1540747913346-19212a4a3e5c?w=600&auto=format&fit=crop&q=80" alt="Fantasy Cricket" />
+          <span class="bc-tag">Cricket</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> June 22, 2025</span><span><i class="fas fa-clock"></i> 6 min</span></div>
+          <h3 class="bc-title">Top 10 Fantasy Cricket Strategies to Dominate IPL 2025</h3>
+          <p class="bc-excerpt">Master captain selection, differential picks, and matchup analysis to consistently crack mega contests and win big during the entire IPL season.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="betting">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" alt="Betting Odds" />
+          <span class="bc-tag">Betting Guide</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> June 15, 2025</span><span><i class="fas fa-clock"></i> 8 min</span></div>
+          <h3 class="bc-title">Sports Betting Odds Explained: Decimal, Fractional &amp; American</h3>
+          <p class="bc-excerpt">Understanding odds is step one to profitable betting. This guide breaks every format with real examples, implied probability, and how to spot value before placing any bet.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="football">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&auto=format&fit=crop&q=80" alt="Fantasy Football" />
+          <span class="bc-tag">Football</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> June 8, 2025</span><span><i class="fas fa-clock"></i> 7 min</span></div>
+          <h3 class="bc-title">Fantasy Football Masterclass: Build a Team That Actually Wins</h3>
+          <p class="bc-excerpt">Formation strategy, set-piece takers, rotation risks — everything you need to build a Premier League fantasy squad that scores big week after week.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="casino">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&auto=format&fit=crop&q=80" alt="Casino Games" />
+          <span class="bc-tag">Casino</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> June 1, 2025</span><span><i class="fas fa-clock"></i> 5 min</span></div>
+          <h3 class="bc-title">Casino Games Decoded: Which Tables Give You the Best Odds?</h3>
+          <p class="bc-excerpt">Blackjack, baccarat, roulette, or slots — each has a different house edge. Find out which games give smart players the highest return and how to reduce risk.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="strategy">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&auto=format&fit=crop&q=80" alt="Bankroll Management" />
+          <span class="bc-tag">Strategy</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> May 25, 2025</span><span><i class="fas fa-clock"></i> 9 min</span></div>
+          <h3 class="bc-title">Bankroll Management: The Golden Rule Every Smart Bettor Lives By</h3>
+          <p class="bc-excerpt">The Kelly Criterion, flat-betting, and proportional staking — learn the money management systems that keep professional bettors profitable long-term.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="kabaddi">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&auto=format&fit=crop&q=80" alt="Kabaddi Fantasy" />
+          <span class="bc-tag">Kabaddi</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> May 18, 2025</span><span><i class="fas fa-clock"></i> 6 min</span></div>
+          <h3 class="bc-title">Kabaddi Fantasy Rising: India's Dark Horse Sport of 2025</h3>
+          <p class="bc-excerpt">Pro Kabaddi League fantasy has smaller player pools, fewer sharp competitors, and massive prize money. Here's how to exploit it right now.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="betting">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&auto=format&fit=crop&q=80" alt="Live Betting" />
+          <span class="bc-tag">Betting Guide</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> May 10, 2025</span><span><i class="fas fa-clock"></i> 7 min</span></div>
+          <h3 class="bc-title">Live In-Play Betting: How to React Faster Than the Market</h3>
+          <p class="bc-excerpt">In-play betting is where sharp bettors make their edge. Learn how to read momentum shifts, time your bets, and avoid the traps casual players always fall into.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="strategy">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80" alt="Smart Bettor" />
+          <span class="bc-tag">Strategy</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> May 2, 2025</span><span><i class="fas fa-clock"></i> 4 min</span></div>
+          <h3 class="bc-title">5 Signs You're a Smart Bettor (And 5 Signs You're Not)</h3>
+          <p class="bc-excerpt">Sharp bettors think differently. Discover the habits, mindset shifts, and discipline practices that separate consistent winners from the crowd.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="cricket">
+        <div class="bc-img">
+          <img src="https://images.unsplash.com/photo-1567731965589-8e5f08b0b4bc?w=600&auto=format&fit=crop&q=80" alt="T20 World Cup" />
+          <span class="bc-tag">Cricket</span>
+        </div>
+        <div class="bc-body">
+          <div class="bc-meta"><span><i class="fas fa-calendar-alt"></i> April 24, 2025</span><span><i class="fas fa-clock"></i> 8 min</span></div>
+          <h3 class="bc-title">T20 World Cup 2025 Betting Guide: Teams, Odds &amp; Value Bets</h3>
+          <p class="bc-excerpt">Complete T20 World Cup preview — squad analysis, pitch conditions, head-to-head records, and the exact value bets our analysts are placing right now.</p>
+          <div class="bc-foot">
+            <span class="bc-author">By DDOB Team</span>
+            <a href="blog-post.html" class="bc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- #blog-grid -->
+
+    <!-- No results message (hidden by default) -->
+    <div id="no-results" style="display:none; text-align:center; padding:3rem 0;">
+      <div style="font-family:'Orbitron',sans-serif; font-size:1.1rem; color:rgba(255,255,255,0.4);">No articles in this category yet.</div>
+      <p style="color:rgba(255,255,255,0.25); margin-top:0.5rem; font-size:0.85rem;">Check back soon or browse all articles.</p>
+      <button class="cat-btn active" style="margin-top:1.5rem;" onclick="filterBlog('all')">View All Articles</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container pt-10 pb-0">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="nav-logo" style="font-size:1.1rem;">
+        <div class="nav-logo-icon-wrap">
+          <img src="assets/images/logo.png" alt="Devansh DOB Online Book" class="nav-logo-img" />
+          <div class="nav-logo-ring"></div>
+        </div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-main">DEVANSH<span class="g">DOB</span></span>
+          <span class="nav-brand-sub">ONLINE BOOK</span>
+        </div>
+      </div>
+      <div class="foot-social">
+        <a class="soc-btn" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a class="soc-btn" href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a class="soc-btn" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a class="soc-btn" href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+      <a href="index.html" class="btn-primary" style="white-space:nowrap;">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+    </div>
+  </div>
+  <div class="foot-bar container">
+    <div class="foot-copy">© 2025 Devansh DOB Online Book. All rights reserved. | Play Smart. Bet Big. Win Big.</div>
+    <div class="foot-legal">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+'use strict';
+
+// ── Navbar scroll ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// ── Hamburger ──
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    mobileNav.setAttribute('aria-hidden', !open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    });
+  });
+}
+
+// ── Scroll Progress ──
+const progressBar = document.getElementById('scroll-progress');
+if (progressBar) {
+  window.addEventListener('scroll', () => {
+    const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    progressBar.style.width = pct + '%';
+  }, { passive: true });
+}
+
+// ── Mouse Glow ──
+const glow = document.getElementById('mouse-glow');
+if (glow) {
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  }, { passive: true });
+}
+
+// ── Category Filter ──
+function filterBlog(cat) {
+  const cards = document.querySelectorAll('#blog-grid .blog-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+    const show = cat === 'all' || cardCat === cat;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.classList.toggle('active', (btn.getAttribute('data-cat') || btn.textContent.trim().toLowerCase()) === cat);
+  });
+}
+
+document.querySelectorAll('.cat-btn[data-cat]').forEach(btn => {
+  btn.addEventListener('click', () => filterBlog(btn.getAttribute('data-cat')));
+});
+
+// ── Simple entrance animation ──
+if (typeof gsap !== 'undefined') {
+  document.querySelectorAll('.blog-card').forEach((card, i) => {
+    gsap.from(card, {
+      scrollTrigger: { trigger: card, start: 'top 92%', once: true },
+      opacity: 0, y: 28, duration: 0.5, delay: (i % 3) * 0.07, ease: 'power3.out'
+    });
+  });
+}
+
+// ── Particles (minimal) ──
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+  const ps = Array.from({length:40}, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 1.8 + 0.4,
+    sx: (Math.random()-.5)*.4,
+    sy: -(Math.random()*.5+.15),
+    a: Math.random()*.18+.04,
+    c: ['rgba(255,193,7,','rgba(139,92,246,','rgba(255,255,255,'][Math.floor(Math.random()*3)]
+  }));
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ps.forEach(p => {
+      p.x+=p.sx; p.y+=p.sy;
+      if(p.y<-10){p.y=canvas.height+10;p.x=Math.random()*canvas.width;}
+      ctx.globalAlpha=p.a;
+      ctx.fillStyle=p.c+p.a+')';
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>

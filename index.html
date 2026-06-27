@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Devansh DOB Online Book — India's #1 Premium Sports Gaming & Fantasy Platform. Cricket, Football, Casino & more. Play Smart. Bet Big. Win Big. Join millions of champions." />
+  <meta name="keywords" content="devansh dob online book, fantasy cricket, sports betting, online gaming, fantasy sports India, cricket fantasy, casino games, win real cash" />
+  <meta name="theme-color" content="#080808" />
+  <meta property="og:title" content="Devansh DOB Online Book — Play Smart. Bet Big. Win Big." />
+  <meta property="og:description" content="India's most trusted sports gaming platform. Fantasy leagues, live casino, instant withdrawals. Play Smart. Bet Big. Win Big." />
+  <title>Devansh DOB Online Book — Play Smart. Bet Big. Win Big.</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { 100: '#FFD54F', 200: '#FFC107', 300: '#F4B400' },
+            dark: { 100: '#1a1a1a', 200: '#111111', 300: '#0a0a0a', 400: '#080808', 500: '#050505' }
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            rajdhani: ['Rajdhani', 'sans-serif'],
+            inter: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Force all image-bearing containers to always be visible regardless of AOS state */
+    .sports-swiper, .sports-swiper img,
+    .g-item, .g-item img,
+    .news-card, .news-card img,
+    .testimonials-swiper img,
+    .sport-card img,
+    [data-aos] img { opacity: 1 !important; transform: none; }
+    /* Video iframe — never hidden */
+    #sports-video { opacity: 1 !important; }
+  </style>
+</head>
+
+<body class="bg-[#080808] text-white overflow-x-hidden">
+
+<!-- ============================================================
+     LOADING SCREEN
+     ============================================================ -->
+<div id="loader" aria-label="Loading">
+  <div class="loader-rings">
+    <div class="lr lr-1"></div>
+    <div class="lr lr-2"></div>
+    <div class="lr lr-3"></div>
+    <img src="assets/images/logo.png" alt="Devansh DOB Online Book" class="loader-logo-img" />
+  </div>
+  <div class="loader-tagline">PLAY SMART. BET BIG. WIN BIG.</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-pct">0%</div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- CANVAS PARTICLES -->
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+<!-- MOUSE GLOW -->
+<div id="mouse-glow" aria-hidden="true"></div>
+
+<!-- ============================================================
+     1. NAVBAR
+     ============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <!-- Logo -->
+  <a href="#hero" class="nav-logo" aria-label="Devansh DOB Online Book">
+    <div class="nav-logo-icon-wrap" aria-hidden="true">
+      <img src="assets/images/logo.png" alt="Devansh DOB Online Book" class="nav-logo-img" />
+      <div class="nav-logo-ring"></div>
+    </div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">DEVANSH<span class="g">DOB</span></span>
+      <span class="nav-brand-sub">ONLINE BOOK</span>
+    </div>
+  </a>
+
+  <!-- Desktop Links -->
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#sports">Sports</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+
+  <!-- Desktop Actions — hamburger only -->
+  <div class="nav-actions">
+    <button id="hamburger" class="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#sports">Sports</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</div>
+
+<!-- ============================================================
+     2. HERO SECTION
+     ============================================================ -->
+<section id="hero" class="hero-section">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <!-- Light streaks -->
+  <div class="light-streak" style="top:25%;width:220px;animation-delay:0s;" aria-hidden="true"></div>
+  <div class="light-streak" style="top:60%;width:160px;animation-delay:3s;" aria-hidden="true"></div>
+  <div class="light-streak" style="top:80%;width:280px;animation-delay:6s;" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative;z-index:2;width:100%;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+
+      <!-- Left Content -->
+      <div class="hero-content">
+        <!-- Badge -->
+        <div class="hero-badge">
+          <span class="live-dot" aria-hidden="true"></span>
+          India's #1 Sports Gaming &amp; Betting Platform
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="hero-h1">
+          <span class="word-block"><span class="inner gold-shimmer">PLAY</span></span>
+          <span class="word-block"><span class="inner" style="color:#fff;">SMART.</span></span>
+          <span class="word-block"><span class="inner gold-text">WIN BIG.</span></span>
+        </h1>
+
+        <p class="hero-sub">
+          Cricket, football, casino &amp; fantasy leagues — all on one platform. Place smart bets, build dream teams, and withdraw winnings instantly. Join <strong class="text-gold">millions of champions</strong> on Devansh DOB Online Book.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="#sports" class="btn-primary magnetic">
+            <i class="fas fa-trophy"></i>
+            Start Playing Now
+          </a>
+          <a href="#video" class="btn-secondary">
+            <i class="fas fa-play-circle"></i>
+            Watch How It Works
+          </a>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num gold-text" data-hero-count="50" data-suffix="M+">50M+</div>
+            <div class="hero-stat-lbl">Active Players</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num" style="color:#a78bfa;" data-hero-count="500" data-suffix="Cr+" data-prefix="₹">₹500Cr+</div>
+            <div class="hero-stat-lbl">Winnings Paid Out</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num" style="color:#67e8f9;" data-hero-count="20" data-suffix="+">20+</div>
+            <div class="hero-stat-lbl">Sports &amp; Games</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num" style="color:#4ade80;" data-hero-count="99.9" data-suffix="%" data-decimals="1">99.9%</div>
+            <div class="hero-stat-lbl">Platform Uptime</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Sports Graphic -->
+      <div class="hero-img-wrap hidden lg:flex items-center justify-center">
+        <!-- Rings -->
+        <div class="ring-outer" aria-hidden="true"></div>
+        <div class="ring-mid" aria-hidden="true"></div>
+        <div class="ring-inner" aria-hidden="true"></div>
+
+        <!-- Main Photo -->
+        <div class="hero-photo">
+          <img
+            src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=700&auto=format&fit=crop&q=80"
+            alt="Sports Champion"
+            width="370" height="370"
+          />
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="float-el fb-gold float-badge" style="top:8%;left:-12%;animation-delay:0s;">
+          <i class="fas fa-bolt text-xs"></i> Live — IPL 2025 Match
+        </div>
+        <div class="float-el fb-purple float-badge" style="top:20%;right:-14%;animation-delay:0.6s;">
+          <i class="fas fa-crown text-xs"></i> ₹50L Prize Pool Today
+        </div>
+        <div class="float-el fb-green float-badge" style="bottom:22%;left:-16%;animation-delay:1.0s;">
+          <i class="fas fa-check-circle text-xs"></i> Instant Withdrawal
+        </div>
+        <div class="float-el fb-blue float-badge" style="bottom:10%;right:-10%;animation-delay:0.3s;">
+          <i class="fas fa-shield-alt text-xs"></i> 100% Secure &amp; Trusted
+        </div>
+        <div class="float-el fb-red float-badge" style="top:50%;left:-18%;animation-delay:1.5s;">
+          <i class="fas fa-fire text-xs"></i> 1 Lakh+ Daily Winners
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. TRUSTED BY SECTION
+     ============================================================ -->
+<section id="trusted" class="trusted-section">
+  <div class="container mb-6" style="position:relative;z-index:2;">
+    <p class="text-center font-rajdhani font-bold tracking-widest text-xs uppercase" style="color:rgba(255,255,255,0.3);">
+      Trusted & Recognized By
+    </p>
+  </div>
+
+  <!-- First marquee -->
+  <div class="marquee-outer mb-4">
+    <div class="marquee-track">
+      <!-- Duplicated set for seamless loop -->
+      <span class="m-item"><i class="fas fa-award"></i> BCCI Official Partner</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-certificate"></i> ISO 27001 Certified</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-shield-alt"></i> SSL Secured Platform</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-star"></i> Forbes Top 50 Startup</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-trophy"></i> Best Sports App 2024</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-handshake"></i> ISL League Partner</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-coins"></i> Fastest Payouts India</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-medal"></i> 5-Star Rated Platform</span>
+      <span class="m-sep">✦</span>
+      <!-- Duplicate for seamless -->
+      <span class="m-item"><i class="fas fa-award"></i> BCCI Official Partner</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-certificate"></i> ISO 27001 Certified</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-shield-alt"></i> SSL Secured Platform</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-star"></i> Forbes Top 50 Startup</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-trophy"></i> Best Sports App 2024</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-handshake"></i> ISL League Partner</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-coins"></i> Fastest Payouts India</span>
+      <span class="m-sep">✦</span>
+      <span class="m-item"><i class="fas fa-medal"></i> 5-Star Rated Platform</span>
+      <span class="m-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- Second marquee (reverse) -->
+  <div class="marquee-outer">
+    <div class="marquee-track rev">
+      <span class="m-item"><i class="fab fa-google-play"></i> Google Play Editors' Choice</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fab fa-apple"></i> App Store Featured App</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-users"></i> 50 Million+ Players</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-rupee-sign"></i> ₹1000 Crore+ Distributed</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-globe"></i> Available in 22 Languages</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-lock"></i> RNG Certified Fair Play</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-bolt"></i> Under 5-Min Withdrawals</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-headset"></i> 24/7 Champion Support</span>
+      <span class="m-sep">◆</span>
+      <!-- Duplicate -->
+      <span class="m-item"><i class="fab fa-google-play"></i> Google Play Editors' Choice</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fab fa-apple"></i> App Store Featured App</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-users"></i> 50 Million+ Players</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-rupee-sign"></i> ₹1000 Crore+ Distributed</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-globe"></i> Available in 22 Languages</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-lock"></i> RNG Certified Fair Play</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-bolt"></i> Under 5-Min Withdrawals</span>
+      <span class="m-sep">◆</span>
+      <span class="m-item"><i class="fas fa-headset"></i> 24/7 Champion Support</span>
+      <span class="m-sep">◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. ABOUT PLATFORM
+     ============================================================ -->
+<section id="about" class="section-py">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Image -->
+      <div class="about-img-wrap" data-aos="fade-right">
+        <div class="about-img-main" style="height:480px;">
+          <img
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&auto=format&fit=crop&q=80"
+            alt="Devansh DOB Online Book Platform"
+            width="700" height="480"
+          />
+        </div>
+        <!-- Floating stat cards -->
+        <div class="about-stat-float glass" style="bottom:-20px;right:-24px;padding:1rem 1.25rem;border-radius:16px;" data-aos="fade-up" data-aos-delay="200">
+          <div class="font-orbitron text-2xl font-black gold-text">₹25L</div>
+          <div class="text-xs text-muted font-rajdhani tracking-wider uppercase">Daily Prize Pool</div>
+        </div>
+        <div class="about-stat-float glass" style="top:-20px;left:-24px;padding:1rem 1.25rem;border-radius:16px;" data-aos="fade-down" data-aos-delay="300">
+          <div class="font-orbitron text-2xl font-black" style="color:#a78bfa;">1.2M+</div>
+          <div class="text-xs text-muted font-rajdhani tracking-wider uppercase">Contests Daily</div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div data-aos="fade-left">
+        <div class="badge-pill mb-4"><span class="dot"></span> About Devansh DOB Online Book</div>
+        <h2 class="section-title mb-5">
+          The Platform<br/>Built for <span class="gold-shimmer">Winners</span>
+        </h2>
+        <p class="section-sub mb-8">
+          Devansh DOB Online Book was built by sports lovers for sports lovers. We deliver real-time odds, fantasy leagues, casino games, and instant payouts — all on one unbeatable platform. Play smart, bet big, and win bigger.
+        </p>
+
+        <!-- Timeline -->
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2018 — FOUNDED</div>
+            <div class="tl-title">The Journey Begins</div>
+            <div class="tl-desc">Started with a bold vision: give every Indian sports fan a fair, fun, and rewarding place to play. Launched with cricket fantasy and live betting.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2020 — EXPANSION</div>
+            <div class="tl-title">10 Sports. 5 Million Players.</div>
+            <div class="tl-desc">Expanded to football, kabaddi, basketball &amp; casino. Crossed 5M registered users. Introduced instant 24/7 withdrawal technology.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2023 — LEADERSHIP</div>
+            <div class="tl-title">Most Trusted Gaming Brand</div>
+            <div class="tl-desc">Recognised as India's most trusted online book. Paid out over ₹500 Crore in winnings. Zero fraud. 100% transparent odds.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2025 — FUTURE</div>
+            <div class="tl-title">AI Odds &amp; Live Casino 3.0</div>
+            <div class="tl-desc">AI-driven odds engine, live dealer casino, and 20+ sports — now serving millions of champions across India every single day.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. WHY CHOOSE US
+     ============================================================ -->
+<section id="why-us" class="section-py" style="background:linear-gradient(180deg,transparent,rgba(139,92,246,0.025),transparent);">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Our Advantages</div>
+      <h2 class="section-title mb-4">Why Millions Choose<br/><span class="gold-shimmer">Devansh DOB Online Book</span></h2>
+      <p class="section-sub max-w-xl mx-auto">Six powerful reasons why we are India's most trusted sports gaming and betting platform.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="why-card tilt-wrap" style="--accent-color:#FFC107;" data-aos="fade-up" data-aos-delay="0">
+        <div data-tilt-inner>
+          <div class="wi" style="background:rgba(255,193,7,0.1);color:#FFC107;">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="wt">Instant Withdrawals</div>
+          <div class="wd">Receive your winnings in under 5 minutes — any time, day or night. No waiting, no limits on frequency.</div>
+        </div>
+      </div>
+
+      <div class="why-card tilt-wrap" style="--accent-color:#8B5CF6;" data-aos="fade-up" data-aos-delay="80">
+        <div data-tilt-inner>
+          <div class="wi" style="background:rgba(139,92,246,0.1);color:#a78bfa;">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <div class="wt">Military-Grade Security</div>
+          <div class="wd">256-bit AES encryption, two-factor authentication, and real-time fraud monitoring protect every rupee you play.</div>
+        </div>
+      </div>
+
+      <div class="why-card tilt-wrap" style="--accent-color:#06B6D4;" data-aos="fade-up" data-aos-delay="160">
+        <div data-tilt-inner>
+          <div class="wi" style="background:rgba(6,182,212,0.1);color:#67e8f9;">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="wt">AI-Powered Analytics</div>
+          <div class="wd">Our proprietary AI engine delivers live pitch reports, player form scores, and weather impact analysis in real-time.</div>
+        </div>
+      </div>
+
+      <div class="why-card tilt-wrap" style="--accent-color:#F97316;" data-aos="fade-up" data-aos-delay="240">
+        <div data-tilt-inner>
+          <div class="wi" style="background:rgba(249,115,22,0.1);color:#fb923c;">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="wt">24/7 VIP Support</div>
+          <div class="wd">Dedicated champions support via live chat, phone, and email — with an average response time of under 90 seconds.</div>
+        </div>
+      </div>
+
+      <div class="why-card tilt-wrap" style="--accent-color:#22C55E;" data-aos="fade-up" data-aos-delay="320">
+        <div data-tilt-inner>
+          <div class="wi" style="background:rgba(34,197,94,0.1);color:#4ade80;">
+            <i class="fas fa-gift"></i>
+          </div>
+          <div class="wt">Daily Bonus Rewards</div>
+          <div class="wd">Earn XP, unlock daily cashback, referral bonuses, seasonal megaprizes, and exclusive VIP tournament invitations.</div>
+        </div>
+      </div>
+
+      <div class="why-card tilt-wrap" style="--accent-color:#EF4444;" data-aos="fade-up" data-aos-delay="400">
+        <div data-tilt-inner>
+          <div class="wi" style="background:rgba(239,68,68,0.1);color:#f87171;">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="wt">Fair Play Certified</div>
+          <div class="wd">100% skill-based gaming certified by independent auditors. Transparent scoring algorithms published openly for all players.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. LIVE FEATURES
+     ============================================================ -->
+<section id="features" class="section-py">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="live-dot dot"></span> Live Platform Features</div>
+      <h2 class="section-title mb-4">Everything You Need to<br/><span class="gold-text">Win Consistently</span></h2>
+      <p class="section-sub max-w-xl mx-auto">A complete gaming ecosystem engineered for champions who demand excellence.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="feat-card" style="--feat-color:#FFC107;" data-aos="fade-up">
+        <div class="fi" style="background:rgba(255,193,7,0.1);color:#FFC107;"><i class="fas fa-chart-bar"></i></div>
+        <div>
+          <div class="fn">Real-Time Live Odds</div>
+          <div class="fd">Dynamic odds updating every 0.3 seconds with over-by-over live feeds from 150+ data streams globally.</div>
+          <div class="live-tag"><span style="width:5px;height:5px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px #22C55E;"></span> Updating Live</div>
+        </div>
+      </div>
+
+      <div class="feat-card" style="--feat-color:#22C55E;" data-aos="fade-up" data-aos-delay="80">
+        <div class="fi" style="background:rgba(34,197,94,0.1);color:#4ade80;"><i class="fas fa-money-bill-wave"></i></div>
+        <div>
+          <div class="fn">Instant Withdrawals</div>
+          <div class="fd">The industry's fastest payout system. Average withdrawal processed in 4 minutes, 52 seconds — guaranteed.</div>
+          <div class="live-tag"><span style="width:5px;height:5px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px #22C55E;"></span> 24/7 Active</div>
+        </div>
+      </div>
+
+      <div class="feat-card" style="--feat-color:#8B5CF6;" data-aos="fade-up" data-aos-delay="120">
+        <div class="fi" style="background:rgba(139,92,246,0.1);color:#a78bfa;"><i class="fas fa-lock"></i></div>
+        <div>
+          <div class="fn">Bank-Level Security</div>
+          <div class="fd">End-to-end encrypted transactions, biometric login, and KYC-verified accounts for maximum safety.</div>
+        </div>
+      </div>
+
+      <div class="feat-card" style="--feat-color:#06B6D4;" data-aos="fade-up" data-aos-delay="160">
+        <div class="fi" style="background:rgba(6,182,212,0.1);color:#67e8f9;"><i class="fas fa-headset"></i></div>
+        <div>
+          <div class="fn">24×7 Expert Support</div>
+          <div class="fd">Human agents available around the clock via live chat, WhatsApp, phone, and email. No bots, ever.</div>
+          <div class="live-tag"><span style="width:5px;height:5px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px #22C55E;"></span> Online Now</div>
+        </div>
+      </div>
+
+      <div class="feat-card" style="--feat-color:#F97316;" data-aos="fade-up" data-aos-delay="200">
+        <div class="fi" style="background:rgba(249,115,22,0.1);color:#fb923c;"><i class="fas fa-medal"></i></div>
+        <div>
+          <div class="fn">Mega Reward System</div>
+          <div class="fd">Daily login bonuses, refer-earn ₹200 per friend, seasonal tournaments, and weekly champion cashback offers.</div>
+        </div>
+      </div>
+
+      <div class="feat-card" style="--feat-color:#EF4444;" data-aos="fade-up" data-aos-delay="240">
+        <div class="fi" style="background:rgba(239,68,68,0.1);color:#f87171;"><i class="fas fa-crown"></i></div>
+        <div>
+          <div class="fn">VIP Diamond Membership</div>
+          <div class="fd">Unlock private high-stakes contests, dedicated account managers, exclusive merchandise, and zero platform fees.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. FEATURED SPORTS
+     ============================================================ -->
+<section id="sports" class="section-py" style="background:radial-gradient(ellipse at 50% 0%,rgba(255,193,7,0.04),transparent 60%);">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Play Your Sport</div>
+      <h2 class="section-title mb-4">15+ Sports.<br/><span class="gold-shimmer">One Epic Platform.</span></h2>
+      <p class="section-sub max-w-xl mx-auto">From cricket stadiums to poker tables — every sport, every contest, every glory.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <!-- Sports Grid -->
+    <div class="swiper sports-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- Cricket -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500&h=700&auto=format&fit=crop&q=85" alt="Cricket" />
+            <div class="sport-overlay">
+              <div class="sport-ico">🏏</div>
+              <div class="sport-name">Cricket</div>
+              <div class="sport-meta">42,000 active contests</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Football -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&h=700&auto=format&fit=crop&q=85" alt="Football" />
+            <div class="sport-overlay">
+              <div class="sport-ico">⚽</div>
+              <div class="sport-name">Football</div>
+              <div class="sport-meta">18,500 active contests</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Basketball -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&h=700&auto=format&fit=crop&q=85" alt="Basketball" />
+            <div class="sport-overlay">
+              <div class="sport-ico">🏀</div>
+              <div class="sport-name">Basketball</div>
+              <div class="sport-meta">9,200 active contests</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Tennis -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=500&h=700&auto=format&fit=crop&q=85" alt="Tennis" />
+            <div class="sport-overlay">
+              <div class="sport-ico">🎾</div>
+              <div class="sport-name">Tennis</div>
+              <div class="sport-meta">6,800 active contests</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Kabaddi -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&h=700&auto=format&fit=crop&q=85" alt="Kabaddi" />
+            <div class="sport-overlay">
+              <div class="sport-ico">🤼</div>
+              <div class="sport-name">Kabaddi</div>
+              <div class="sport-meta">3,500 active contests</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Horse Racing -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&h=700&auto=format&fit=crop&q=85" alt="Horse Racing" />
+            <div class="sport-overlay">
+              <div class="sport-ico">🐎</div>
+              <div class="sport-name">Horse Racing</div>
+              <div class="sport-meta">2,100 active contests</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <!-- Casino -->
+        <div class="swiper-slide">
+          <div class="sport-card">
+            <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=500&h=700&auto=format&fit=crop&q=85" alt="Casino Games" />
+            <div class="sport-overlay">
+              <div class="sport-ico">🎰</div>
+              <div class="sport-name">Casino Games</div>
+              <div class="sport-meta">5,600 active tables</div>
+            </div>
+            <div class="sport-glow-border"></div>
+            <div class="sport-pin"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+      </div><!-- .swiper-wrapper -->
+    </div><!-- .sports-swiper -->
+
+    <div class="text-center mt-8" data-aos="fade-up">
+      <a href="#features" class="btn-outline-gold inline-flex items-center gap-2" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;border:1px solid rgba(255,193,7,0.28);border-radius:10px;font-family:'Rajdhani',sans-serif;font-weight:700;color:#FFC107;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.35s ease;">
+        Explore All 20+ Sports <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. STATISTICS
+     ============================================================ -->
+<section id="stats" class="section-py relative overflow-hidden stats-section">
+  <div class="stats-bg" aria-hidden="true"></div>
+  <div class="light-streak" style="top:30%;width:300px;animation-delay:2s;" aria-hidden="true"></div>
+  <div class="light-streak" style="top:65%;width:200px;animation-delay:5s;" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Platform Numbers</div>
+      <h2 class="section-title mb-4">Numbers That<br/><span class="gold-text">Define Greatness</span></h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <div class="stat-box glass" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-num gold-text" data-count="50" data-suffix="M+" data-prefix="">0</div>
+        <div class="stat-lbl">Active Players</div>
+        <div class="prog-track"><div class="prog-fill" data-width="90%" style="background:linear-gradient(90deg,#F4B400,#FFD54F);box-shadow:0 0 8px rgba(255,193,7,0.4);"></div></div>
+      </div>
+
+      <div class="stat-box glass" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-num purple-text" data-count="1000" data-suffix="Cr" data-prefix="₹">₹0</div>
+        <div class="stat-lbl">Prize Distributed</div>
+        <div class="prog-track"><div class="prog-fill" data-width="85%" style="background:linear-gradient(90deg,#8B5CF6,#a78bfa);box-shadow:0 0 8px rgba(139,92,246,0.4);"></div></div>
+      </div>
+
+      <div class="stat-box glass" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-num blue-text" data-count="1.2" data-suffix="M+" data-decimals="1">0</div>
+        <div class="stat-lbl">Daily Contests</div>
+        <div class="prog-track"><div class="prog-fill" data-width="75%" style="background:linear-gradient(90deg,#06B6D4,#67e8f9);box-shadow:0 0 8px rgba(6,182,212,0.4);"></div></div>
+      </div>
+
+      <div class="stat-box glass" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-num" style="color:#4ade80;" data-count="99.9" data-suffix="%" data-decimals="1">0</div>
+        <div class="stat-lbl">Platform Uptime</div>
+        <div class="prog-track"><div class="prog-fill" data-width="99%" style="background:linear-gradient(90deg,#22C55E,#4ade80);box-shadow:0 0 8px rgba(34,197,94,0.4);"></div></div>
+      </div>
+
+    </div>
+
+    <!-- Extra mini stats row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+      <div class="text-center p-5 glass" data-aos="fade-up" data-aos-delay="100">
+        <div class="font-orbitron text-xl font-black text-gold-200" style="color:#FFC107;" data-count="15" data-suffix="+">15+</div>
+        <div class="text-xs text-muted font-rajdhani tracking-widest uppercase mt-1">Sports Available</div>
+      </div>
+      <div class="text-center p-5 glass" data-aos="fade-up" data-aos-delay="180">
+        <div class="font-orbitron text-xl font-black" style="color:#a78bfa;" data-count="22" data-suffix="+">22+</div>
+        <div class="text-xs text-muted font-rajdhani tracking-widest uppercase mt-1">Languages</div>
+      </div>
+      <div class="text-center p-5 glass" data-aos="fade-up" data-aos-delay="260">
+        <div class="font-orbitron text-xl font-black" style="color:#67e8f9;" data-count="5" data-suffix=" Min">5 Min</div>
+        <div class="text-xs text-muted font-rajdhani tracking-widest uppercase mt-1">Avg Withdrawal</div>
+      </div>
+      <div class="text-center p-5 glass" data-aos="fade-up" data-aos-delay="340">
+        <div class="font-orbitron text-xl font-black" style="color:#4ade80;" data-count="4.9" data-suffix="★" data-decimals="1">4.9★</div>
+        <div class="text-xs text-muted font-rajdhani tracking-widest uppercase mt-1">App Store Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. VIDEO SECTION
+     ============================================================ -->
+<section id="video" class="section-py" style="background:radial-gradient(ellipse at 50% 50%,rgba(139,92,246,0.04),transparent 65%);">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> See It In Action</div>
+      <h2 class="section-title mb-4">Watch the <span class="purple-text">Action</span><br/>Live &amp; Unfiltered</h2>
+      <p class="section-sub max-w-xl mx-auto">See how Devansh DOB Online Book turns every match into a money-making moment. Auto-plays as you scroll.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="video-wrap" style="position:relative;">
+        <!-- Animated border glow -->
+        <div class="vid-border-glow" aria-hidden="true"></div>
+
+        <!-- YouTube iframe — src set directly, autoplay+mute for all browsers -->
+        <iframe
+          id="sports-video"
+          class="vid-frame"
+          src="https://www.youtube.com/embed/EngW7tLk6R8?autoplay=1&mute=1&loop=1&playlist=EngW7tLk6R8&controls=1&rel=0&playsinline=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="Devansh DOB Online Book"
+          style="background:#000;"
+        ></iframe>
+      </div>
+
+      <!-- Video stats below -->
+      <div class="grid grid-cols-3 gap-4 mt-6">
+        <div class="text-center p-4 glass">
+          <div class="font-orbitron text-lg font-black gold-text">LIVE</div>
+          <div class="text-xs text-muted font-rajdhani tracking-wider uppercase">Match Streaming</div>
+        </div>
+        <div class="text-center p-4 glass">
+          <div class="font-orbitron text-lg font-black" style="color:#a78bfa;">0.3s</div>
+          <div class="text-xs text-muted font-rajdhani tracking-wider uppercase">Score Updates</div>
+        </div>
+        <div class="text-center p-4 glass">
+          <div class="font-orbitron text-lg font-black" style="color:#67e8f9;">200+</div>
+          <div class="text-xs text-muted font-rajdhani tracking-wider uppercase">Data Sources</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     10. GALLERY
+     ============================================================ -->
+<section id="gallery" class="section-py">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Champion Moments</div>
+      <h2 class="section-title mb-4">Where <span class="gold-shimmer">Legends</span><br/>Are Forged</h2>
+      <p class="section-sub max-w-xl mx-auto">Real moments from real champions who trusted Devansh DOB Online Book and won big.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Big featured -->
+      <div class="g-item big">
+        <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=900&h=600&auto=format&fit=crop&q=85" alt="Cricket Championship" />
+        <div class="g-over"><div class="g-tag"><i class="fas fa-trophy"></i> Live Cricket Match</div></div>
+        <div class="g-plus"><i class="fas fa-expand-alt"></i></div>
+      </div>
+
+      <!-- Small top right -->
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&h=380&auto=format&fit=crop&q=85" alt="Football Action" />
+        <div class="g-over"><div class="g-tag">Football</div></div>
+        <div class="g-plus"><i class="fas fa-expand-alt"></i></div>
+      </div>
+
+      <!-- Small bottom right -->
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&h=380&auto=format&fit=crop&q=85" alt="Basketball" />
+        <div class="g-over"><div class="g-tag">Basketball</div></div>
+        <div class="g-plus"><i class="fas fa-expand-alt"></i></div>
+      </div>
+
+      <!-- Bottom row -->
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=500&h=380&auto=format&fit=crop&q=85" alt="Horse Racing" />
+        <div class="g-over"><div class="g-tag">Horse Racing</div></div>
+        <div class="g-plus"><i class="fas fa-expand-alt"></i></div>
+      </div>
+
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=500&h=380&auto=format&fit=crop&q=85" alt="Casino Games" />
+        <div class="g-over"><div class="g-tag">Casino</div></div>
+        <div class="g-plus"><i class="fas fa-expand-alt"></i></div>
+      </div>
+
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=500&h=380&auto=format&fit=crop&q=85" alt="Tennis" />
+        <div class="g-over"><div class="g-tag">Tennis</div></div>
+        <div class="g-plus"><i class="fas fa-expand-alt"></i></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     11. TESTIMONIALS
+     ============================================================ -->
+<section id="testimonials" class="section-py" style="background:linear-gradient(180deg,transparent,rgba(255,193,7,0.02),transparent);">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Champion Reviews</div>
+      <h2 class="section-title mb-4">50M Champions<br/><span class="gold-shimmer">Can't Be Wrong</span></h2>
+      <p class="section-sub max-w-xl mx-auto">Hear from real winners who transformed their passion for sports into real rewards.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide h-auto">
+          <div class="testi-card h-full">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-text">"Devansh DOB Online Book completely changed how I experience cricket. The live updates are insanely fast, and I won ₹3.2 Lakhs in a single IPL weekend. The payout hit my bank in literally 4 minutes. This is the real deal."</div>
+            <div class="t-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Rahul Sharma" class="t-avatar" />
+              <div>
+                <div class="t-name">Rahul Sharma</div>
+                <div class="t-role">IT Professional, Mumbai</div>
+              </div>
+              <div class="t-win"><div class="t-win-num">₹3.2L</div><div class="t-win-lbl">Won This Month</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide h-auto">
+          <div class="testi-card h-full">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-text">"I've tried 6 different fantasy apps. None come close to Devansh DOB Online Book. The AI team suggestion feature alone helped me crack the mega contest worth ₹10 Lakhs. The VIP membership is absolutely worth every rupee."</div>
+            <div class="t-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Priya Patel" class="t-avatar" />
+              <div>
+                <div class="t-name">Priya Patel</div>
+                <div class="t-role">Business Owner, Ahmedabad</div>
+              </div>
+              <div class="t-win"><div class="t-win-num">₹10L</div><div class="t-win-lbl">Biggest Win</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide h-auto">
+          <div class="testi-card h-full">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-text">"The security here is next-level. I was skeptical at first but everything from KYC to payouts is flawlessly executed. Consistent winnings for 14 months straight. Devansh DOB Online Book is my second income stream now."</div>
+            <div class="t-author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Arjun Singh" class="t-avatar" />
+              <div>
+                <div class="t-name">Arjun Singh</div>
+                <div class="t-role">Engineer, Bengaluru</div>
+              </div>
+              <div class="t-win"><div class="t-win-num">₹85K</div><div class="t-win-lbl">Monthly Average</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide h-auto">
+          <div class="testi-card h-full">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-text">"As a cricket analyst, I can confidently say Devansh DOB Online Book's data is the most accurate in the industry. The live pitch reports, match conditions integration, and smart alerts give serious players a massive edge."</div>
+            <div class="t-author">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80" alt="Meera Reddy" class="t-avatar" />
+              <div>
+                <div class="t-name">Meera Reddy</div>
+                <div class="t-role">Sports Analyst, Hyderabad</div>
+              </div>
+              <div class="t-win"><div class="t-win-num">₹22L</div><div class="t-win-lbl">Won This Year</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide h-auto">
+          <div class="testi-card h-full">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-text">"The daily bonuses and referral system are unbeatable. I've earned over ₹18,000 just from referrals alone. The platform is smooth, the contests are fair, and the customer support actually responds. Total trust."</div>
+            <div class="t-author">
+              <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100&auto=format&fit=crop&q=80" alt="Vikram Malhotra" class="t-avatar" />
+              <div>
+                <div class="t-name">Vikram Malhotra</div>
+                <div class="t-role">Teacher, Delhi</div>
+              </div>
+              <div class="t-win"><div class="t-win-num">₹5.4L</div><div class="t-win-lbl">Lifetime Earnings</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination mt-6"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     12. ACHIEVEMENTS
+     ============================================================ -->
+<section id="achievements" class="section-py" style="background:linear-gradient(135deg,rgba(139,92,246,0.02),rgba(255,193,7,0.02));">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Recognition</div>
+      <h2 class="section-title mb-4">Awards That Prove<br/><span class="gold-text">Our Excellence</span></h2>
+      <div class="divider-gold"></div>
+    </div>
+
+    <!-- Award Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
+      <div class="ach-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="ach-icon">🏆</span>
+        <div class="font-rajdhani font-bold text-sm mb-1">Best Fantasy App</div>
+        <div class="text-xs text-muted">Forbes India 2024</div>
+      </div>
+      <div class="ach-card" data-aos="fade-up" data-aos-delay="80">
+        <span class="ach-icon">⭐</span>
+        <div class="font-rajdhani font-bold text-sm mb-1">4.9★ Rating</div>
+        <div class="text-xs text-muted">Google Play Store</div>
+      </div>
+      <div class="ach-card" data-aos="fade-up" data-aos-delay="160">
+        <span class="ach-icon">🛡️</span>
+        <div class="font-rajdhani font-bold text-sm mb-1">ISO 27001</div>
+        <div class="text-xs text-muted">Security Certified</div>
+      </div>
+      <div class="ach-card" data-aos="fade-up" data-aos-delay="240">
+        <span class="ach-icon">🌍</span>
+        <div class="font-rajdhani font-bold text-sm mb-1">Top 10 Startup</div>
+        <div class="text-xs text-muted">Economic Times 2023</div>
+      </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="trust-badge" data-aos="fade-up" data-aos-delay="0">
+        <div class="tb-icon">🔒</div>
+        <div><div class="tb-name">256-bit SSL Encryption</div><div class="tb-desc">Bank-grade data security on all transactions</div></div>
+      </div>
+      <div class="trust-badge" data-aos="fade-up" data-aos-delay="80">
+        <div class="tb-icon">✅</div>
+        <div><div class="tb-name">RBI Compliant Platform</div><div class="tb-desc">Fully compliant with all financial regulations</div></div>
+      </div>
+      <div class="trust-badge" data-aos="fade-up" data-aos-delay="160">
+        <div class="tb-icon">🎯</div>
+        <div><div class="tb-name">Fair Play Guaranteed</div><div class="tb-desc">Third-party certified random number generation</div></div>
+      </div>
+      <div class="trust-badge" data-aos="fade-up" data-aos-delay="240">
+        <div class="tb-icon">⚡</div>
+        <div><div class="tb-name">Instant KYC Verification</div><div class="tb-desc">Aadhaar-based KYC completed in under 2 minutes</div></div>
+      </div>
+      <div class="trust-badge" data-aos="fade-up" data-aos-delay="320">
+        <div class="tb-icon">💳</div>
+        <div><div class="tb-name">10+ Payment Methods</div><div class="tb-desc">UPI, Net Banking, Cards, Wallets — all supported</div></div>
+      </div>
+      <div class="trust-badge" data-aos="fade-up" data-aos-delay="400">
+        <div class="tb-icon">📞</div>
+        <div><div class="tb-name">24/7 Human Support</div><div class="tb-desc">Real experts, not bots — always here for you</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     13. BLOG SECTION
+     ============================================================ -->
+<section id="blog" class="section-py" style="display:none;">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <div class="badge-pill mb-3"><span class="dot"></span> Expert Insights</div>
+      <h2 class="section-title mb-4">Blog & <span class="gold-shimmer">Strategies</span></h2>
+      <p class="section-sub max-w-lg mx-auto">Expert tips, winning strategies, and insider guides to help you play smarter and win bigger on every bet.</p>
+      <div class="divider-gold"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <article class="news-card">
+        <div class="nc-img">
+          <img src="https://images.unsplash.com/photo-1540747913346-19212a4a3e5c?w=600&h=420&auto=format&fit=crop&q=85" alt="Fantasy Cricket Strategies" />
+          <span class="nc-tag">Cricket</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-date"><i class="fas fa-calendar-alt"></i> June 22, 2025</div>
+          <h3 class="nc-title">Top 10 Fantasy Cricket Strategies to Dominate IPL 2025</h3>
+          <p class="nc-excerpt">From captain-vice captain picks to differential player selection — master the tactics that top-ranked fantasy players use to consistently crack mega contests and pocket big prizes.</p>
+        </div>
+        <div class="nc-foot">
+          <span>6 min read</span>
+          <a href="blog-post.html" class="nc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="nc-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=420&auto=format&fit=crop&q=85" alt="Betting Odds Guide" />
+          <span class="nc-tag">Betting Guide</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-date"><i class="fas fa-calendar-alt"></i> June 15, 2025</div>
+          <h3 class="nc-title">Sports Betting Odds Explained: Decimal, Fractional &amp; American</h3>
+          <p class="nc-excerpt">Understanding odds is the first step to profitable betting. This beginner-to-pro guide breaks down every odds format with real examples, so you always know the implied probability before placing a bet.</p>
+        </div>
+        <div class="nc-foot">
+          <span>8 min read</span>
+          <a href="blog-post.html" class="nc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="nc-img">
+          <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=420&auto=format&fit=crop&q=85" alt="Fantasy Football Masterclass" />
+          <span class="nc-tag">Football</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-date"><i class="fas fa-calendar-alt"></i> June 8, 2025</div>
+          <h3 class="nc-title">Fantasy Football Masterclass: Build a Team That Actually Wins</h3>
+          <p class="nc-excerpt">Formation strategy, set-piece takers, rotation risks — everything you need to build a Premier League fantasy squad that scores big week after week. Used by 3 of our top 10 leaderboard players.</p>
+        </div>
+        <div class="nc-foot">
+          <span>7 min read</span>
+          <a href="blog-post.html" class="nc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="nc-img">
+          <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&h=420&auto=format&fit=crop&q=85" alt="Casino Games Guide" />
+          <span class="nc-tag">Casino</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-date"><i class="fas fa-calendar-alt"></i> June 1, 2025</div>
+          <h3 class="nc-title">Casino Games Decoded: Which Tables Give You the Best Odds?</h3>
+          <p class="nc-excerpt">Blackjack, baccarat, roulette, or slots — each game has a different house edge. Learn which casino games give smart players the highest return and how to minimize your risk while maximizing fun.</p>
+        </div>
+        <div class="nc-foot">
+          <span>5 min read</span>
+          <a href="blog-post.html" class="nc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="nc-img">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=420&auto=format&fit=crop&q=85" alt="Bankroll Management" />
+          <span class="nc-tag">Strategy</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-date"><i class="fas fa-calendar-alt"></i> May 25, 2025</div>
+          <h3 class="nc-title">Bankroll Management: The Golden Rule Every Smart Bettor Lives By</h3>
+          <p class="nc-excerpt">The difference between a winner and a loser is rarely the picks — it's the staking plan. Learn the Kelly Criterion, flat-betting, and proportional staking methods used by professional bettors worldwide.</p>
+        </div>
+        <div class="nc-foot">
+          <span>9 min read</span>
+          <a href="blog-post.html" class="nc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="nc-img">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=420&auto=format&fit=crop&q=85" alt="Kabaddi Fantasy Rising" />
+          <span class="nc-tag">Kabaddi</span>
+        </div>
+        <div class="nc-body">
+          <div class="nc-date"><i class="fas fa-calendar-alt"></i> May 18, 2025</div>
+          <h3 class="nc-title">Kabaddi Fantasy Rising: India's Dark Horse Sport of 2025</h3>
+          <p class="nc-excerpt">Pro Kabaddi League fantasy is the most underrated profit opportunity on our platform right now. Smaller player pools, easier matchups, and massive prizes — here's exactly how to exploit it before everyone catches on.</p>
+        </div>
+        <div class="nc-foot">
+          <span>6 min read</span>
+          <a href="blog-post.html" class="nc-read">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center mt-10" data-aos="fade-up">
+      <a href="blog.html" class="btn-secondary inline-flex">
+        <i class="fas fa-book-open"></i> View All Articles
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     14. FAQ
+     ============================================================ -->
+<section id="faq" class="section-py" style="background:linear-gradient(180deg,transparent,rgba(139,92,246,0.025),transparent);">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Left: Header -->
+      <div data-aos="fade-right">
+        <div class="badge-pill mb-4"><span class="dot"></span> Got Questions?</div>
+        <h2 class="section-title mb-5">
+          Frequently<br/><span class="gold-shimmer">Asked Questions</span>
+        </h2>
+        <p class="section-sub mb-8">Everything you need to know about Devansh DOB Online Book. Can't find your answer? Our champions support team is 24/7 ready to help.</p>
+
+        <a href="#" class="btn-primary inline-flex">
+          <i class="fas fa-headset"></i> Contact Support
+        </a>
+
+        <!-- Quick info cards -->
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="glass p-4 text-center">
+            <div class="font-orbitron font-black gold-text text-xl">90s</div>
+            <div class="text-xs text-muted font-rajdhani tracking-wider uppercase mt-1">Avg Response Time</div>
+          </div>
+          <div class="glass p-4 text-center">
+            <div class="font-orbitron font-black text-xl" style="color:#4ade80;">4.9★</div>
+            <div class="text-xs text-muted font-rajdhani tracking-wider uppercase mt-1">Support Rating</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Accordion -->
+      <div data-aos="fade-left">
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>How do I get started on Devansh DOB Online Book?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Visit our website, click "Register," enter your mobile number, verify with OTP, and complete a quick 2-minute KYC using your Aadhaar or PAN card. Your account is live immediately. You also receive a ₹200 welcome bonus on first activation — credited instantly.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Is my money and data 100% safe?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes, absolutely. All funds are secured in escrow accounts with leading Indian banks. We use 256-bit AES encryption, are ISO 27001 certified, and comply fully with RBI financial guidelines. Your money and data are never shared or compromised.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>How quickly can I withdraw my winnings?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Withdrawals process within 5 minutes on average — among the fastest in the industry. We support UPI, NEFT, RTGS, and all major Indian bank accounts. There is no minimum withdrawal limit, and you can cash out as many times per day as you want.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Which sports and games are available?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">We cover 20+ sports and games: Cricket (IPL, T20 WC, Test, Big Bash), Football (EPL, La Liga, ISL, Champions League), Basketball (NBA), Tennis (Grand Slams), Kabaddi (PKL), Horse Racing, and a full Live Casino with 500+ tables including Blackjack, Roulette, Baccarat, and Teen Patti.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>What welcome bonuses and ongoing offers are there?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">New players get ₹200 sign-up bonus plus 100% first-deposit match up to ₹10,000. Regular players enjoy daily cashback up to 20%, weekly refills, refer-a-friend ₹200 bonus, and exclusive VIP tournaments with prize pools up to ₹1 Crore.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Is fantasy sports legal in India?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes. Fantasy sports is recognized as a game of skill by the Supreme Court of India and multiple state High Courts. Devansh DOB Online Book operates fully within the legal framework under the Information Technology Act, 2000, and is a registered member of the FIFS (Federation of Indian Fantasy Sports).</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Does Devansh DOB Online Book have a VIP or Loyalty program?</span>
+            <div class="faq-ico"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes! Our Diamond VIP program has 5 tiers: Bronze → Silver → Gold → Platinum → Diamond. Benefits scale with your tier including zero platform fees, private high-stakes contests, exclusive merchandise, dedicated account managers, and early access to new features.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     17. FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container pt-16 pb-0">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <div class="nav-logo mb-5" style="font-size:1.2rem;">
+          <div class="nav-logo-icon-wrap">
+            <img src="assets/images/logo.png" alt="Devansh DOB Online Book" class="nav-logo-img" />
+            <div class="nav-logo-ring"></div>
+          </div>
+          <div class="nav-brand-text">
+            <span class="nav-brand-main">DEVANSH<span class="g">DOB</span></span>
+            <span class="nav-brand-sub">ONLINE BOOK</span>
+          </div>
+        </div>
+        <p class="foot-desc" style="max-width:320px;">
+          India's most trusted sports gaming and live betting platform. Cricket, football, kabaddi, casino — real winnings, instant payouts, every day.
+        </p>
+        <div class="foot-social" style="margin-top:1.25rem;">
+          <a class="soc-btn" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a class="soc-btn" href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+          <a class="soc-btn" href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a class="soc-btn" href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a class="soc-btn" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="foot-h">Quick Links</div>
+        <ul class="foot-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#sports">Sports &amp; Games</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <div class="foot-h">Legal &amp; Support</div>
+        <ul class="foot-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Responsible Gaming</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Contact Support</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="container mt-8" style="position:relative;z-index:2;">
+    <div class="p-4 rounded-2xl text-xs" style="background:rgba(255,193,7,0.04);border:1px solid rgba(255,193,7,0.08);color:rgba(255,255,255,0.3);line-height:1.7;">
+      <strong style="color:rgba(255,193,7,0.6);">18+ Only.</strong> Sports gaming and betting involves financial risk. Play responsibly. Devansh DOB Online Book operates as an entertainment gaming platform. Please verify local regulations before participating. For support: contact@devanshdob.com
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
+  <div class="foot-bar container">
+    <div class="foot-copy">© 2025 Devansh DOB Online Book. All rights reserved. | Play Smart. Bet Big. Win Big.</div>
+    <div class="foot-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SCRIPTS (CDN — all via CDN for zero server dependency)
+     ============================================================ -->
+
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<!-- GSAP ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- GSAP TextPlugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/main.js" defer></script>
+
+</body>
+</html>
