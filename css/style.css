@@ -260,6 +260,9 @@ input,textarea { font-family:inherit; }
 @media (max-width:768px) {
   .nav-social-btn { width:32px; height:32px; font-size:0.9rem; }
 }
+@media (max-width:768px) {
+  .nav-social { display:none; }
+}
 
 /* Full brand-color social icons (navbar + footer) */
 .nav-social-btn.tg, .soc-btn.tg {
@@ -978,6 +981,25 @@ footer::before {
 }
 @media (max-width:640px) {
   .whatsapp-float { width:56px; height:56px; font-size:1.7rem; bottom:16px; right:14px; }
+}
+
+/* ===== MOBILE-ONLY SOCIAL FLOAT (Telegram + Instagram, bottom-left) ===== */
+.mobile-social-float { display:none; }
+@media (max-width:768px) {
+  .mobile-social-float {
+    display:flex; flex-direction:column; gap:12px;
+    position:fixed; bottom:16px; left:14px; z-index:9998;
+  }
+  .mobile-social-btn {
+    width:52px; height:52px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem; color:#fff;
+    box-shadow:0 6px 24px rgba(0,0,0,0.35);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .mobile-social-btn:hover, .mobile-social-btn:active { color:#fff; transform:scale(1.08); }
+  .mobile-social-btn.tg { background:linear-gradient(135deg,#2AABEE,#229ED9); }
+  .mobile-social-btn.ig { background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 }
 
 /* ===== KEYFRAME ANIMATIONS ===== */
