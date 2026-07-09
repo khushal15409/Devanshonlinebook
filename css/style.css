@@ -248,6 +248,28 @@ input,textarea { font-family:inherit; }
 .nav-hamburger.open span:nth-child(2) { opacity:0; transform:translateX(-8px); }
 .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
 
+/* ===== NAV SOCIAL (Telegram + Instagram) ===== */
+.nav-social { display:flex; align-items:center; gap:0.55rem; }
+.nav-social-btn {
+  width:34px; height:34px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center; font-size:0.98rem;
+  color:#fff; border:1px solid transparent; transition:var(--t-fast);
+}
+.nav-social-btn.tg:hover, .soc-btn.tg:hover { box-shadow:0 0 16px rgba(42,171,238,0.45); transform:translateY(-3px); }
+.nav-social-btn.ig:hover, .soc-btn.ig:hover { box-shadow:0 0 16px rgba(225,48,108,0.45); transform:translateY(-3px); }
+@media (max-width:768px) {
+  .nav-social-btn { width:32px; height:32px; font-size:0.9rem; }
+}
+
+/* Full brand-color social icons (navbar + footer) */
+.nav-social-btn.tg, .soc-btn.tg {
+  background:linear-gradient(135deg,#2AABEE,#229ED9);
+}
+.nav-social-btn.ig, .soc-btn.ig {
+  background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.nav-social-btn.tg i, .nav-social-btn.ig i, .soc-btn.tg i, .soc-btn.ig i { color:#fff; }
+
 /* Mobile menu — hidden on desktop, slides down on mobile */
 @media (min-width:769px) {
   .mobile-nav { display:none !important; }
@@ -937,6 +959,26 @@ footer::before {
 .foot-legal { display:flex; gap:1.5rem; flex-wrap:wrap; }
 .foot-legal a { font-size:0.78rem; color:rgba(255,255,255,0.28); transition:color 0.3s ease; }
 .foot-legal a:hover { color:rgba(255,255,255,0.55); }
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.whatsapp-float {
+  position:fixed; bottom:24px; right:24px; z-index:9998;
+  width:64px; height:64px; border-radius:50%;
+  background:#25D366; color:#fff; font-size:2rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 24px rgba(0,0,0,0.35), 0 0 0 0 rgba(37,211,102,0.6);
+  animation:wa-pulse 2.4s infinite;
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+.whatsapp-float:hover { color:#fff; transform:scale(1.08); box-shadow:0 8px 30px rgba(0,0,0,0.45); }
+@keyframes wa-pulse {
+  0% { box-shadow:0 6px 24px rgba(0,0,0,0.35), 0 0 0 0 rgba(37,211,102,0.55); }
+  70% { box-shadow:0 6px 24px rgba(0,0,0,0.35), 0 0 0 16px rgba(37,211,102,0); }
+  100% { box-shadow:0 6px 24px rgba(0,0,0,0.35), 0 0 0 0 rgba(37,211,102,0); }
+}
+@media (max-width:640px) {
+  .whatsapp-float { width:56px; height:56px; font-size:1.7rem; bottom:16px; right:14px; }
+}
 
 /* ===== KEYFRAME ANIMATIONS ===== */
 @keyframes logo-glow-pulse {
