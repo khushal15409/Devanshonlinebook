@@ -617,6 +617,20 @@ input,textarea { font-family:inherit; }
 .fi { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
 .fn { font-family:'Rajdhani',sans-serif; font-size:1rem; font-weight:700; margin-bottom:0.35rem; }
 .fd { font-size:0.84rem; color:rgba(255,255,255,0.46); line-height:1.6; }
+
+/* ===== CASINO PROMO ===== */
+.promo-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.75rem; }
+.promo-card {
+  border-radius:18px; overflow:hidden;
+  background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.055);
+  transition:var(--t-med);
+}
+.promo-card:hover { border-color:rgba(255,193,7,0.28); transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.35); }
+.promo-img { width:100%; aspect-ratio:1/1; overflow:hidden; }
+.promo-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.7s var(--ease-smooth); }
+.promo-card:hover .promo-img img { transform:scale(1.06); }
+.promo-title { font-family:'Rajdhani',sans-serif; font-size:1.2rem; font-weight:700; letter-spacing:0.02em; margin:1.3rem 1.5rem 0.5rem; }
+.promo-desc { font-size:0.88rem; color:rgba(255,255,255,0.48); line-height:1.65; margin:0 1.5rem 1.5rem; }
 .live-tag {
   display:inline-flex; align-items:center; gap:0.28rem;
   padding:0.18rem 0.55rem;
@@ -1101,6 +1115,9 @@ footer::before {
   .gallery-grid { grid-template-columns:1fr 1fr; gap:10px; }
   .g-item.big { grid-column:span 2; grid-row:span 1; height:210px; }
   .g-item { height:140px; }
+  .promo-grid { grid-template-columns:1fr; gap:1.25rem; }
+  .promo-title { font-size:1rem; margin:0.9rem 1rem 0.4rem; }
+  .promo-desc { font-size:0.8rem; margin:0 1rem 1rem; }
   .section-py { padding-top:75px; padding-bottom:75px; }
   .phone-wrap { width:200px; }
   .foot-bar { flex-direction:column; text-align:center; }
